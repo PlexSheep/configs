@@ -1,0 +1,5 @@
+[user]
+	email = PlexSheep@protonmail.com
+	name = PlexSheep
+[credential]
+	helper = store --file ~/.git-credentials
