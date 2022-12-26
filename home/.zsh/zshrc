@@ -8,14 +8,13 @@ fi
 ### ENVVARS
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin
 export EDITOR=nvim
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 ### Alias
 alias l="lsd -lah"
 alias ll="lsd -lh"
 alias la="lsd -a"
 alias ls="lsd"
+alias kalishell="ssh kali@192.168.100.244"
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
@@ -64,6 +63,6 @@ if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
     source /usr/share/nnn/quitcd/quitcd.bash_zsh
 fi
 
-
-# Load Angular CLI autocompletion.
-#source <(ng completion script)
+### --- zsh tab completion Config ------------------------------------
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
