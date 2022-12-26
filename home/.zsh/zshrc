@@ -59,9 +59,7 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
-if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
-    source /usr/share/nnn/quitcd/quitcd.bash_zsh
-fi
+source /usr/share/nnn/quitcd/quitcd.bash_zsh
 
 ### --- zsh tab completion Config ------------------------------------
 autoload -Uz compinit && compinit
