@@ -6,8 +6,9 @@ alias l="ls --color -lah"
 alias ll="ls --color -lh"
 alias la="ls --color -ah"
 alias ls="ls --color -h"
-alias rm="echo 'please consider using trash instead: trash\nIf you really want to use rm, use purge.' "
+alias rm='echo "If you really want to use rm, use purge.\nOtherwise, please consider using trash instead: trash"'
 alias purge="/usr/bin/rm"
+alias sudo='nocorrect sudo '
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh-server

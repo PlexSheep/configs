@@ -15,9 +15,10 @@ alias ll="lsd -lh"
 alias la="lsd -a"
 alias ls="lsd"
 alias kalishell="ssh kali@192.168.100.244"
-alias rm="echo 'please consider using trash instead: trash\nIf you really want to use rm, use purge.' "
+alias rm='echo "If you really want to use rm, use purge.\nOtherwise, please consider using trash instead: trash"'
 alias purge="/usr/bin/rm"
 alias plasmarestart="kquitapp5 plasmashell && kstart5 plasmashell"
+alias sudo='nocorrect sudo '
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
