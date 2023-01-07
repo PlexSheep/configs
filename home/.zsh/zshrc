@@ -19,6 +19,7 @@ alias rm='echo "If you really want to use rm, use purge.\nOtherwise, please cons
 alias purge="/usr/bin/rm"
 alias plasmarestart="kquitapp5 plasmashell && kstart5 plasmashell"
 alias sudo='nocorrect sudo '
+alias grep="grep --color -n"
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
