@@ -35,7 +35,7 @@ bindkey -s "^X" 'n^M'
 bindkey -v
 
 ### ---- PLUGINS & THEMES -----------------------------------
-source $ZSH/themes/bira/bira.zsh-theme
+PS1='%B%F{red}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{white} %# %b%f%k'
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
