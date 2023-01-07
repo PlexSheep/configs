@@ -4,13 +4,8 @@ mkdir -p /etc/
 mkdir -p /home/
 mkdir -p /usr/share
 
-cp -fr ./home/.wakeonlan ~
 cp -fr ./etc/vimrc /etc/vimrc
-cp -fr ./etc/xdg/nvim /etc/xdg/nvim/
-cp -fr ./home/.zsh ~
 cp -fr ./home/.zsh-server ~
-ln ~/.zsh/zshrc ~/.zshrc
-cp -fr .home/.p10k.zsh ~
-cp -fr .home/.gitconfig ~
+ln ~/.zsh-server/zshrc ~/.zshrc
 cp -fr ./usr/share/* /usr/share/
 cp -fr ./etc/* /etc
