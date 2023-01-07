@@ -6,6 +6,8 @@ alias l="ls --color -lah"
 alias ll="ls --color -lh"
 alias la="ls --color -ah"
 alias ls="ls --color -h"
+alias rm="echo please consider using trash instead: trash "
+alias purge="/usr/bin/rm"
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh-server
