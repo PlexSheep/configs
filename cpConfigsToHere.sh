@@ -11,4 +11,4 @@ cp -fr ~/.zsh ./home/
 cp -fr ~/.zshrc ./home/
 cp -fr ~/.p10k.zsh ./home
 cp -fr ~/.gitconfig ./home
-cp -fr /usr/share/fzf ./usr/share/fzf
+#cp -fr /usr/share/fzf ./usr/share/fzf

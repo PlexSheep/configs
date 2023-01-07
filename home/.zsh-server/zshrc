@@ -1,0 +1,54 @@
+### ENVVARS
+export EDITOR=vim
+
+### Alias
+alias l="ls --color -lah"
+alias ll="ls --color -lh"
+alias la="ls --color -ah"
+alias ls="ls --color -h"
+
+### ZSH HOME
+export ZSH=$HOME/.zsh-server
+
+### ---- history config -------------------------------------
+export HISTFILE=$ZSH/.zsh_history
+
+# How many commands zsh will load to memory.
+export HISTSIZE=10000
+
+# How many commands history will save on file.
+export SAVEHIST=10000
+
+# History won't save duplicates.
+setopt HIST_IGNORE_ALL_DUPS
+
+# History won't show duplicates on search.
+setopt HIST_FIND_NO_DUPS
+
+### ---- zsh options -------------------------------------
+setopt autocd
+
+### --- Inputs Config ------------------------------------
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey -s "^X" 'n^M'
+bindkey -v
+
+### ---- PLUGINS & THEMES -----------------------------------
+source $ZSH/themes/bira/bira.zsh-theme
+source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source $ZSH/plugins/wakeonlan/wakeonlan.plugin.zsh
+fpath=($ZSH/plugins/zsh-completions/src $fpath)
+
+### --- fzf Config ------------------------------------
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS='--no-sort --exact'
+
+### --- nnn Config ------------------------------------
+source /usr/share/nnn/quitcd/quitcd.bash_zsh
+
+### --- zsh tab completion Config ------------------------------------
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
