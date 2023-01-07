@@ -9,7 +9,9 @@ alias ls="ls --color -h"
 alias rm='echo "If you really want to use rm, use purge.\nOtherwise, please consider using trash instead: trash"'
 alias purge="/usr/bin/rm"
 alias sudo='nocorrect sudo '
-alias grep="grep --color -n"
+alias grep="grep --color"
+alias egrep="grep -E"
+alias lgrep="find | grep"
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh-server
@@ -52,7 +54,3 @@ export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
 source /usr/share/nnn/quitcd/quitcd.bash_zsh
-
-### --- zsh tab completion Config ------------------------------------
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
