@@ -38,8 +38,8 @@ bindkey -v
 PS1='%B%F{red}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{white} %# %b%f%k'
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source $ZSH/plugins/wakeonlan/wakeonlan.plugin.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
 ### --- fzf Config ------------------------------------
