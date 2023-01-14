@@ -22,6 +22,8 @@ alias sudo='nocorrect sudo '
 alias grep="grep --color"
 alias egrep="grep -E"
 alias lgrep="find | grep"
+alias psgrep="ps axu | grep"
+alias plasmarestart="killall plasmashell && kstart plasma-desktop"
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
