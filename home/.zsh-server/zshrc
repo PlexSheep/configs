@@ -1,7 +1,7 @@
 ### ENVVARS
 export EDITOR=vim
 
-### Alias
+### Aliases
 alias l="ls --color -lah"
 alias ll="ls --color -lh"
 alias la="ls --color -ah"
@@ -12,6 +12,8 @@ alias sudo='nocorrect sudo '
 alias grep="grep --color"
 alias egrep="grep -E"
 alias lgrep="find | grep"
+alias psgrep="ps axu | grep"
+alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh-server
