@@ -1,1 +1,0 @@
-/home/plex/.zsh/zshrc
