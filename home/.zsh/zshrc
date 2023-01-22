@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ### ENVVARS
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin
+export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin
 export EDITOR=nvim
 
 ### Aliases
@@ -46,10 +46,11 @@ setopt HIST_FIND_NO_DUPS
 setopt autocd
 
 ### --- Inputs Config ------------------------------------
+# vim keys, then override stuff.
+bindkey -v	
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey -s "^X" 'n^M'
-bindkey -v
 
 ### ---- PLUGINS & THEMES -----------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

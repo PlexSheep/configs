@@ -37,10 +37,11 @@ setopt HIST_FIND_NO_DUPS
 setopt autocd
 
 ### --- Inputs Config ------------------------------------
+# vim keys, then override stuff.
+bindkey -v	
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey -s "^X" 'n^M'
-bindkey -v
 
 ### ---- PLUGINS & THEMES -----------------------------------
 PS1='%B%F{red}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{white} %# %b%f%k'
