@@ -24,6 +24,13 @@ set timeout timeoutlen=400
 " Avoid showing message extra message when using completion"
 set shortmess+=c
 
+filetype plugin indent on   "allow auto-indenting depending on file type
+filetype plugin on
+
+
+" let g:indentLine_setColors = 0
+let g:indentLine_char = '│'
+
 " set timeout to wait for shortcuts with a prefix
 noremap oo o<ESC>
 noremap OO O<ESC>
@@ -52,7 +59,10 @@ map <Leader>" :vsplit<CR>
 map <Leader>% :split<CR>
 
 " :W to save file as root"
-command W :w ! sudo tee %
+command W :SudaWrite
+
+" :E to open file as root"
+command E :SudaRead
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
 " packages

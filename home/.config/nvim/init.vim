@@ -1,8 +1,9 @@
-syntax on 		    " syntax highlighting
+syntax on                   " syntax highlighting
+
 set nocompatible            " disable compatibility to old-time vi
-set showmatch               " show matching 
-set ignorecase              " case insensitive 
 set mouse=v                 " middle-click paste with 
+set number
+set nocompatible
 set hlsearch                " highlight search 
 set incsearch               " incremental search
 set tabstop=4               " number of columns occupied by a tab 
@@ -12,23 +13,59 @@ set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
-set cc=110                  " set an 80 column border for good coding style
-filetype plugin indent on   "allow auto-indenting depending on file type
-syntax on                   " syntax highlighting
+set cc=100                  " set an 100 column border for good coding style
 set mouse=a                 " enable mouse click
-filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set fdm=syntax              " foldingmethod syntax
-set spell                 " enable spell check (may need to download language package)
-" set noswapfile            " disable creating swap file
-" set backupdir=~/.cache/vim " Directory to store backup files.
+"set spell                 " enable spell check (may need to download language package)
+set timeout timeoutlen=400
 
-" colorscheme base16-default-dark
+" Avoid showing message extra message when using completion"
+set shortmess+=c
+
+filetype plugin indent on   "allow auto-indenting depending on file type
+filetype plugin on
+
 
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
 
+" set timeout to wait for shortcuts with a prefix
+noremap oo o<ESC>
+noremap OO O<ESC>
+
+" hit f3 to toggle search highlighting"
+nnoremap <F3> :set hlsearch!<CR> 
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+map <leader>t :echo "leader tested!"<CR>
+map <leader>h :noh<CR>
+
+" copy to system clipboard when leader is used. (note, install gvim for this)
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+Y
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" open terminal with F12
+nnoremap <F12> :terminal<CR>
+
+" vsplit with <Leader>, then "
+map <Leader>" :vsplit<CR>
+
+" split with <Leader>, then %"
+map <Leader>% :split<CR>
+
+" :W to write file as root"
+command W :SudaWrite
+
+" :E to open file as root"
+command E :SudaRead
+
+" Set completeopt to have a better completion experience"
+set completeopt=menuone,noinsert,noselect
 call plug#begin()
 
 Plug 'lambdalisue/suda.vim'
@@ -41,7 +78,6 @@ Plug 'nvim-lualine/lualine.nvim'   " nicer status line
 Plug 'neovim/nvim-lspconfig'       " lsp config for easy setup of LSP
 Plug 'romgrk/barbar.nvim'          " tabs for buffers
 Plug 'EdenEast/nightfox.nvim'      " Vim-Plug
-"Plug 'Yggdroot/indentLine'
 Plug 'numToStr/FTerm.nvim'         " floating terminal, toggle with <F11>
 Plug 'kdheepak/lazygit.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -63,42 +99,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
 
-" Avoid showing message extra message when using completion"
-set shortmess+=c
-
-
-" hit f3 to toggle search highlighting"
-nnoremap <F3> :set hlsearch!<CR> 
-
-" <Leader> is a variable that is by default '/' and is supposed to be
-" used before user made mappings as it seems. It can be changed to
-" whatever i want.
-"
-
-" clipboard copy paste
-" " Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-
-" " Paste from clipboard
-"nnoremap <leader>p "+p
-"nnoremap <leader>P "+P
-"vnoremap <leader>p "+p
-"vnoremap <leader>P "+P
-
-" vsplit with <Leader>, then "
-map <Leader>" :vsplit<CR>
-
-" split with <Leader>, then %"
-map <Leader>% :split<CR>
-
-" :W to save file as root"
-command W :SudaWrite
-
-" :E to open file as root"
-command E :SudaRead
 
 " Open NvimTree with f5"
 nnoremap <F5> :NvimTreeToggle<CR>
@@ -145,9 +145,8 @@ nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
 " :BarbarEnable - enables barbar (enabled by default)
 " :BarbarDisable - very bad command, should never be used
 "
-nnoremap <Cmd><F12> :terminal<CR>
 
-" packages"
+" packages
 packadd termdebug
 
 color carbonfox
