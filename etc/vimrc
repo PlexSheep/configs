@@ -1,8 +1,0 @@
-syntax on
-set nocompatible
-set number
-
-"" make a blank line with oo/OO in rapid succession.
-nmap oo o <ESC>
-nmap OO O <ESC>
-set timeout timeoutlen=300
