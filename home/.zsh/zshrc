@@ -23,6 +23,7 @@ alias lgrep="find | grep"
 alias psgrep="ps axu | grep"
 alias plasmarestart="killall plasmashell; kstart plasma-desktop"
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
+alias vim="vimx"
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
@@ -57,8 +58,8 @@ bindkey -s "^X" 'n^M'
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source ~/.local/share/fzf/key-bindings.zsh
+source ~/.local/share/fzf/completion.zsh
 source $ZSH/plugins/wakeonlan/wakeonlan.plugin.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
@@ -67,4 +68,4 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
-source /usr/share/nnn/quitcd/quitcd.bash_zsh
+source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
