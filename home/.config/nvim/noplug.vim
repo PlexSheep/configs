@@ -43,6 +43,12 @@ let mapleader=" "
 map <leader>t :echo "leader tested!"<CR>
 map <leader>h :noh<CR>
 
+" copy to wayland clipboard when leader is used. (note, install gvim for this)
+vnoremap  <leader>wy  y :call system("wl-copy", @")<CR>
+nnoremap  <leader>wY  Y :call system("wl-copy", @")<CR>
+nnoremap  <leader>wy  y :call system("wl-copy", @")<CR>
+nnoremap  <leader>wyy yy :call system("wl-copy", @")<CR>
+
 " copy to system clipboard when leader is used. (note, install gvim for this)
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+Y
@@ -58,7 +64,7 @@ map <Leader>" :vsplit<CR>
 " split with <Leader>, then %"
 map <Leader>% :split<CR>
 
-" :W to save file as root"
+" :W to write file as root"
 command W :SudaWrite
 
 " :E to open file as root"
