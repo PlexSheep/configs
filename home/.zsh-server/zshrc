@@ -43,12 +43,18 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey -s "^X" 'n^M'
 
-### ---- PLUGINS & THEMES -----------------------------------
+### ---- THEMES -----------------------------------
 PS1='%B%F{red}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{white} %# %b%f%k'
+
+### ---- ZSH MODULES -----------------------------------
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+### ---- PLUGINS -----------------------------------
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source ~/.local/share/fzf/key-bindings.zsh
+source ~/.local/share/fzf/completion.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
 ### --- fzf Config ------------------------------------
@@ -56,4 +62,4 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
-source /usr/share/nnn/quitcd/quitcd.bash_zsh
+source ~/.local/share/nnn/quitcd/quitcd.bash_zsh

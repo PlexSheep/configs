@@ -53,9 +53,14 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey -s "^X" 'n^M'
 
-### ---- PLUGINS & THEMES -----------------------------------
+### ---- THEMES -----------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
+### ---- ZSH MODULES -----------------------------------
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+### ---- PLUGINS -----------------------------------
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.local/share/fzf/key-bindings.zsh
