@@ -1,5 +1,15 @@
 # configs
 
-some config files i use for my systems.
-you need to install fzf for some zsh stuff
-you also need vim plugged for vim plugins
+This repository contains most of the configs I use on my systems, this is all for Linux
+systems, be it servers or workstations. To install it, just run the desktop/server script as the
+target user, some stuff will need to run as root.
+
+# Dependencies
+- vim
+- fzf
+- nnn
+- zsh
+- git
+- curl
+- lsd (workstations)
+- nodejs (nvim language server)
