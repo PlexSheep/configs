@@ -14,8 +14,9 @@ alias grep="grep --color"
 alias egrep="grep -E"
 alias lgrep="find | grep"
 alias psgrep="ps axu | grep"
-alias largefiles='du -h ./DATEN | grep -P "\d+\.\d+(G|T)\"'
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
+### Functions
+function largefiles () { du -h "$@" | grep -P "\d+\.\d+(G|T)"; }
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh-server
