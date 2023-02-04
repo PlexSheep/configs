@@ -12,7 +12,7 @@ cp -r $(pwd)/home/.zsh-server ~
 cp -r $(pwd)/home/.vimrc ~
 cp -r $(pwd)/home/.local ~
 cp -r $(pwd)/home/.config ~
-cp -r $(pwd)/home/.tmux.conf ~
+cp -r $(pwd)/home/.tmux-server.conf ~/.tmux.conf
 
 ln ~/.zsh-server/zshrc ~/.zshrc
 
@@ -32,7 +32,7 @@ sudo bash -c 'cp -r $(pwd)/home/.zsh-server ~'
 sudo bash -c 'cp -r $(pwd)/home/.vimrc ~'
 sudo bash -c 'cp -r $(pwd)/home/.local ~'
 sudo bash -c 'cp -r $(pwd)/home/.config ~'
-sudo bash -c 'cp -r $(pwd)/home/.tmux.conf ~'
+sudo bash -c 'cp -r $(pwd)/home/.tmux-server.conf ~/.tmux.conf'
 
 sudo bash -c 'ln ~/.zsh-server/zshrc ~/.zshrc'
 
