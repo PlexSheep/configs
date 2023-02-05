@@ -1,10 +1,10 @@
 #!/bin/bash
 
-rm ~/.zsh-very-old
+rm -rf ~/.zsh-very-old
 mv ~/.zsh-old ~/.zsh-very-old
 mv ~/.zsh ~/.zsh-old
 
-rm ~/.zshrc-very-old
+rm -rf ~/.zshrc-very-old
 mv ~/.zshrc-old ~/.zshrc-very-old
 mv ~/.zshrc ~/.zshrc-old
 
