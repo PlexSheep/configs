@@ -18,6 +18,7 @@ set mouse=a                 " enable mouse click
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set fdm=syntax              " foldingmethod syntax
+set foldlevel=10            " only fold when a certain complexity is reached by default. This applies only at startup.
 "set spell                 " enable spell check (may need to download language package)
 set timeout timeoutlen=400
 
