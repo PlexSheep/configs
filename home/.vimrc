@@ -66,6 +66,9 @@ map <Leader>" :vsplit<CR>
 " split with <Leader>, then %"
 map <Leader>% :split<CR>
 
+" enter normal mode from terminal-emulator width <ESC>
+tnoremap <Esc> <C-\><C-n>
+
 " :W to write file as root"
 command W :w ! sudo tee %
 " Set completeopt to have a better completion experience"

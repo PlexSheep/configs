@@ -74,6 +74,15 @@ map <Leader>" :vsplit<CR>
 " split with <Leader>, then %"
 map <Leader>% :split<CR>
 
+" automatically enter insert mode on new neovim terminals
+augroup terminal
+  au TermOpen * startinsert
+augroup END
+
+" enter normal mode from terminal-emulator with <C-w>
+inoremap <C-w> <Esc>
+tnoremap <C-w> <C-\><C-n>
+
 " :W to write file as root"
 command W :SudaWrite
 
