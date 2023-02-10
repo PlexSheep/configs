@@ -162,8 +162,11 @@ nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
 " :BarbarDisable - very bad command, should never be used
 "
 
-" packages
+" debuging
 packadd termdebug
+
+" debuggin for rust
+command Rustdebug :let termdebugger="rust-gdb" | :Termdebug
 
 color terafox
 

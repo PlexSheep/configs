@@ -19,3 +19,4 @@ target user, some stuff will need to run as root.
 [ ] add options for help, only local installs, complete installs and so on
 [ ] add vim shortcut to resize splits
 [ ] take a look at autoclosing plugins for nvim
+[ ] Check if :Rustdebug works with regular vim

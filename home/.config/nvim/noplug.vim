@@ -81,5 +81,8 @@ command W :SudaWrite
 command E :SudaRead
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
-" packages
+" debuging
 packadd termdebug
+
+" debuggin for rust
+command Rustdebug :let termdebugger="rust-gdb" | :Termdebug
