@@ -59,6 +59,15 @@ nnoremap  <leader>yy  "+yy
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
 
+" automatically set closed braces aswell when making opened ones.
+" inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " vsplit with <Leader>, then "
 map <Leader>" :vsplit<CR>
 

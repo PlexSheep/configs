@@ -24,7 +24,6 @@ set timeout timeoutlen=400
 
 " Avoid showing message extra message when using completion"
 set shortmess+=c
-
 " set timeout to wait for shortcuts with a prefix
 noremap oo o<ESC>
 noremap OO O<ESC>
@@ -51,6 +50,15 @@ nnoremap  <leader>yy  "+yy
 
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
+
+" automatically set closed braces aswell when making opened ones.
+" inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " vsplit with <Leader>, then "
 map <Leader>" :vsplit<CR>

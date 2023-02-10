@@ -13,3 +13,9 @@ target user, some stuff will need to run as root.
 - curl
 - lsd (workstations)
 - nodejs (nvim language server)
+
+# TODO
+[ ] list nvim plugins and auto install
+[ ] add options for help, only local installs, complete installs and so on
+[ ] add vim shortcut to resize splits
+[ ] take a look at autoclosing plugins for nvim
