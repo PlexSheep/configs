@@ -59,15 +59,6 @@ nnoremap  <leader>yy  "+yy
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
 
-" automatically set closed braces aswell when making opened ones.
-" inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
 " vsplit with <Leader>, then "
 map <Leader>" :vsplit<CR>
 
@@ -94,23 +85,23 @@ set completeopt=menuone,noinsert,noselect
 call plug#begin()
 
 Plug 'lambdalisue/suda.vim'
-Plug 'preservim/nerdcommenter'
+"Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'psliwka/vim-smoothie' " scorll with STRG + d or STRG + u
 Plug 'nvim-lualine/lualine.nvim'   " nicer status line
-Plug 'neovim/nvim-lspconfig'       " lsp config for easy setup of LSP
+"Plug 'neovim/nvim-lspconfig'       " lsp config for easy setup of LSP
 Plug 'romgrk/barbar.nvim'          " tabs for buffers
 Plug 'EdenEast/nightfox.nvim'      " Vim-Plug
 Plug 'numToStr/FTerm.nvim'         " floating terminal, toggle with <F11>
 Plug 'kdheepak/lazygit.nvim'
-Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'goolord/alpha-nvim'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-cmdline'
+"Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -191,6 +182,17 @@ let g:lazygit_config_file_path = '' " custom config file path
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 
+
+" coc language server configs
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+" do these commands manually, they dont like being scripted.
+"CocInstall coc-clangd coc-cmake coc-css coc-floaterm coc-fzf-preview coc-git coc-html coc-json
+"CocInstall coc-lists coc-lua coc-pyright coc-rust-analyzer coc-sh coc-snippets coc-sql
+""""these may cause errors"""""CocInstall coc-symbol-line coc-toml coc-texlab coc-vimlsp coc-xml
+
 "------------------------------------------------------
 lua << END
 require('alpha').setup(require('alpha.themes.startify').config)
@@ -204,9 +206,6 @@ vim.opt.termguicolors = true
 
 -- empty setup using defaults
 require("nvim-tree").setup()
-
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.rust_analyzer.setup{}
 
 require('lualine').setup {
     options = {
@@ -259,68 +258,6 @@ dimensions  = {
     width = 0.9,
     },
 })
-
--- Set up nvim-cmp.
-local cmp = require'cmp'
-
-cmp.setup({
-snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-    vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-    -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-    -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
-    },
-    window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
-        },
-        mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        }),
-        sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
-        }, {
-            { name = 'buffer' },
-        })
-        })
-
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-        { name = 'buffer' },
-    })
-    })
-
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = 'buffer' }
-    }
-    })
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-    { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    })
-    })
 
 -- Example keybindings
 vim.keymap.set('n', '<F12>', '<CMD>lua require("FTerm").toggle()<CR>')
