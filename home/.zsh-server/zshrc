@@ -1,7 +1,7 @@
 ### ENVVARS
 export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:~/.local/bin:~/.cargo/bin
-source ~/.path.zsh
 export EDITOR=vim
+export editor=vim
 
 ### Aliases
 alias l="ls --color -lah"
@@ -27,10 +27,10 @@ export ZSH=$HOME/.zsh-server
 export HISTFILE=~/.zsh_history
 
 # How many commands zsh will load to memory.
-export HISTSIZE=10000
+export HISTSIZE=100000
 
 # How many commands history will save on file.
-export SAVEHIST=10000
+export SAVEHIST=100000
 
 # History won't save duplicates.
 setopt HIST_IGNORE_ALL_DUPS
@@ -68,3 +68,6 @@ export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
 source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
+
+### --- local Config ------------------------------------
+source ~/.local.zsh
