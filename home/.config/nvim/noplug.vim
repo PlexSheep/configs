@@ -20,7 +20,7 @@ set ttyfast                 " Speed up scrolling in Vim
 set fdm=syntax              " foldingmethod syntax
 set foldlevel=10            " only fold when a certain complexity is reached by default. This applies only at startup.
 "set spell                 " enable spell check (may need to download language package)
-set timeout timeoutlen=400
+set timeout timeoutlen=200
 
 " Avoid showing message extra message when using completion"
 set shortmess+=c
@@ -55,6 +55,9 @@ vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+Y
 nnoremap  <leader>y  "+y
 nnoremap  <leader>yy  "+yy
+
+" dont write the pastet upon stuff in visual mode into the register
+vnoremap p pgvy
 
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
