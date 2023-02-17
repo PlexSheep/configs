@@ -7,6 +7,7 @@ fi
 
 ### ENVVARS
 export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:~/.cargo/bin
+source ~/.path.zsh
 export EDITOR=nvim
 
 ### Aliases
@@ -23,6 +24,7 @@ alias lgrep="find | grep"
 alias psgrep="ps axu | grep"
 alias plasmarestart="killall plasmashell; kstart plasma-desktop"
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
+alias gg=lazygit
 
 ### Functions
 function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }

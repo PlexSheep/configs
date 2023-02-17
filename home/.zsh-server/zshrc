@@ -1,5 +1,6 @@
 ### ENVVARS
-export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:~/.local/bin
+export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:~/.local/bin:~/.cargo/bin
+source ~/.path.zsh
 export EDITOR=vim
 
 ### Aliases
