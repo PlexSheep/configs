@@ -34,12 +34,16 @@ export ZSH=$HOME/.zsh
 
 ### ---- history config -------------------------------------
 export HISTFILE=~/.zsh_history
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # How many commands zsh will load to memory.
 export HISTSIZE=100000
 
 # How many commands history will save on file.
-export SAVEHIST=100000
+# all of them!
+export SAVEHIST=10000000
 
 # History won't save duplicates.
 setopt HIST_IGNORE_ALL_DUPS
