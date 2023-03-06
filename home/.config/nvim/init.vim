@@ -20,7 +20,8 @@ set ttyfast                 " Speed up scrolling in Vim
 set fdm=indent              " foldingmethod syntax
 set foldlevel=10            " only fold when a certain complexity is reached by default. This applies only at startup.
 "set spell                 " enable spell check (may need to download language package)
-set timeout timeoutlen=200
+set timeout timeoutlen=400
+set ttimeoutlen=0
 
 " Avoid showing message extra message when using completion"
 set shortmess+=c

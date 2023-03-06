@@ -43,7 +43,3 @@ sudo bash -c 'cp -r $(pwd)/home/.config ~'
 sudo bash -c 'cp -r $(pwd)/home/.tmux.conf ~'
 
 sudo bash -c 'ln ~/.zsh/zshrc ~/.zshrc'
-
-# Install Vim Stuff
-sudo sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
