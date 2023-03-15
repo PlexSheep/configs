@@ -17,6 +17,7 @@ alias la="lsd -a"
 alias ls="lsd"
 alias rm='echo "If you really want to use rm, use purge.\nOtherwise, please consider using trash instead: trash"'
 alias purge="/usr/bin/rm"
+alias doas='doas '
 alias sudo='nocorrect sudo '
 alias grep="grep --color"
 alias egrep="grep -E"
