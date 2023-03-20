@@ -1,3 +1,10 @@
+call plug#begin()
+
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'jiangmiao/auto-pairs'
+Plug 'EdenEast/nightfox.nvim'      " Vim-Plug
+
+call plug#end()
 syntax on                   " syntax highlighting
 
 set nocompatible            " disable compatibility to old-time vi
@@ -63,35 +70,21 @@ vnoremap p pgvy
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
 
-" automatically set closed braces aswell when making opened ones.
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {}<left>
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
-
 " vsplit with <Leader>, then "
 map <Leader>" :vsplit<CR>
 
 " split with <Leader>, then %"
 map <Leader>% :split<CR>
 
+" enter normal mode from terminal-emulator with <C-w>
+inoremap <C-w> <Esc>
+tnoremap <C-w> <C-\><C-n>
+
 " automatically enter insert mode on new neovim terminals
 augroup terminal
   au TermOpen * startinsert
 augroup END
 
-" enter normal mode from terminal-emulator with <C-w>
-inoremap <C-w> <Esc>
-tnoremap <C-w> <C-\><C-n>
-
-" :W to write file as root"
-command W :SudaWrite
-
-" :E to open file as root"
-command E :SudaRead
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
 " debuging
@@ -99,3 +92,4 @@ packadd termdebug
 
 " debuggin for rust
 command Rustdebug :let termdebugger="rust-gdb" | :Termdebug
+
