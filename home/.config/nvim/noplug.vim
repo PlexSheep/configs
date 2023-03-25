@@ -33,13 +33,9 @@ filetype plugin on
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
 
-" add lines with double o
+" set timeout to wait for shortcuts with a prefix
 noremap oo o<ESC>
 noremap OO O<ESC>
-
-" H and L for end and beginning
-nmap H ^
-nmap L $
 
 " hit f3 to toggle search highlighting"
 nnoremap <F3> :set hlsearch!<CR> 
@@ -61,14 +57,45 @@ nnoremap  <leader>Y  "+Y
 nnoremap  <leader>y  "+y
 nnoremap  <leader>yy  "+yy
 
-" dont write the pasted upon stuff in visual mode into the register
+" dont write the pastet upon stuff in visual mode into the register
 vnoremap p pgvy
 
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
+
+" automatically set closed braces aswell when making opened ones.
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 " vsplit with <Leader>, then "
 map <Leader>" :vsplit<CR>
 
 " split with <Leader>, then %"
 map <Leader>% :split<CR>
+
+" automatically enter insert mode on new neovim terminals
+augroup terminal
+  au TermOpen * startinsert
+augroup END
+
+" enter normal mode from terminal-emulator with <C-w>
+inoremap <C-w> <Esc>
+tnoremap <C-w> <C-\><C-n>
+
+" :W to write file as root"
+command W :SudaWrite
+
+" :E to open file as root"
+command E :SudaRead
+" Set completeopt to have a better completion experience"
+set completeopt=menuone,noinsert,noselect
+" debuging
+packadd termdebug
+
+" debuggin for rust
+command Rustdebug :let termdebugger="rust-gdb" | :Termdebug

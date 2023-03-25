@@ -1,5 +1,22 @@
+" enter normal mode from terminal-emulator with <C-w>
+inoremap <C-w> <Esc>
+tnoremap <C-w> <C-\><C-n>
+
+" automatically enter insert mode on new neovim terminals
+augroup terminal
+  au TermOpen * startinsert
+augroup END
+
+" debuging
+packadd termdebug
+
+" debugging for rust
+command Rustdebug :let termdebugger="rust-gdb" | :Termdebug
+
 " :W to write file as root"
 command W :SudaWrite
+" Set completeopt to have a better completion experience"
+set completeopt=menuone,noinsert,noselect
 
 " :E to open file as root"
 command E :SudaRead
