@@ -20,3 +20,7 @@ target user, some stuff will need to run as root.
 [ ] add vim shortcut to resize splits
 [ ] take a look at autoclosing plugins for nvim
 [ ] Check if :Rustdebug works with regular vim
+
+# Mirrored
+The origin of this repository is [git.cscherr.de](https://git.cscherr.de/PlexSheep/configs.git)
+It is mirrored to [github](https://github.com/PlexSheep/configs)
