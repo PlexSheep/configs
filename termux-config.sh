@@ -8,7 +8,7 @@ rm -rf ~/.zshrc-very-old
 mv ~/.zshrc-old ~/.zshrc-very-old
 mv ~/.zshrc ~/.zshrc-old
 
-cp -r $(pwd)/home/.p10k.zsh ~
+cp -r $(pwd)/home/.p10k-standart-fonts.zsh ~/.p10k.zsh
 cp -r $(pwd)/home/.zsh ~
 cp -r $(pwd)/home/.wakeonlan ~
 cp -r $(pwd)/home/.vimrc ~
