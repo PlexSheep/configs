@@ -1,5 +1,8 @@
 [user]
 	email = PlexSheep@protonmail.com
 	name = PlexSheep
+	signingkey = software@cscherr.de
 [credential]
 	helper = store --file ~/.git-credentials
+[commit]
+	gpgsign = true
