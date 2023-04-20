@@ -13,6 +13,7 @@ cp -r $(pwd)/home/.vimrc ~
 cp -r $(pwd)/home/.local ~
 cp -r $(pwd)/home/.config ~
 cp -r $(pwd)/home/.tmux-server.conf ~/.tmux.conf
+touch ~/.local.zsh
 
 ln ~/.zsh-server/zshrc ~/.zshrc
 
