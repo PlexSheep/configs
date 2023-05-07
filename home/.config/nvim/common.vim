@@ -41,6 +41,23 @@ noremap OO O<ESC>
 nmap H ^
 nmap L $
 
+" usefull functions for arrow keys
+" (and force the user to use hjkl)
+
+" right/left to add/remove a tab in the beginning of the line.
+nmap <Left> <<
+nmap <Right> >>
+" same for visual mode (plus reselecting stuff for visual mode)
+vmap <Left> <gv
+vmap <Right> >gv
+
+" up and down move lines up and down
+nmap <Up> :m -2<CR>
+nmap <Down> :m +1<CR>
+" same for visual mode (plus reselecting stuff for visual mode)
+vmap <Up> :m -2<CR>
+vmap <Down> :m +1<CR>
+
 " hit f3 to toggle search highlighting"
 nnoremap <F3> :set hlsearch!<CR> 
 

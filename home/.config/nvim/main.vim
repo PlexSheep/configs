@@ -41,8 +41,18 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+runtime markdownpreview.vim
 
 call plug#end()
+
+" no default mappings for vim smoothie (fancy scrolling)
+let g:smoothie_no_default_mappings = 1
+
+" smooth scrolling with J and K instead of <S-Up> and <S-Down>
+nnoremap <unique> J <cmd>call smoothie#do("\<C-D>") <CR>
+vnoremap <unique> J <cmd>call smoothie#do("\<C-D>") <CR>
+nnoremap <unique> K <cmd>call smoothie#do("\<C-U>") <CR>
+vnoremap <unique> K <cmd>call smoothie#do("\<C-U>") <CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu"
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
