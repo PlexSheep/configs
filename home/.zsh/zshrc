@@ -26,6 +26,7 @@ alias psgrep="ps axu | grep"
 alias plasmarestart="killall plasmashell; kstart5 plasmashell"
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
 alias gg=lazygit
+alias kssh="kitty +kitten ssh"
 
 ### Functions
 function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }
