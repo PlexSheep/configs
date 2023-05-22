@@ -26,7 +26,7 @@ alias psgrep="ps axu | grep"
 alias plasmarestart="killall plasmashell; kstart5 plasmashell"
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
 alias gg=lazygit
-alias kssh="kitty +kitten ssh"
+alias reload="source ~/.zshrc"
 
 ### Functions
 function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }
@@ -84,6 +84,19 @@ export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
 source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
+
+### --- kitty Config ------------------------------------
+# $KITTY_TERM is a custom envar I set in the kitty conf
+# this stuff does not work nicely with tmux, just make them regular aliases. Shows an error if you use them in another terminal
+#if [[ "$KITTY_TERM" -eq "TRUE" ]]
+#then
+#    alias ssh="kitty +kitten ssh"
+#    alias tmux="export KITTY_TERM='TRUE'; tmux"
+#fi
+alias kssh="kitty +kitten ssh"
+alias kimg="kitty +kitten icat"
+# kdiff does not work on my system for some reason
+#alias kdiff="kitty +kitten diff"
 
 ### --- local Config ------------------------------------
 source ~/.local.zsh
