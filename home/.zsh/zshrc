@@ -84,6 +84,7 @@ export FZF_CTRL_R_OPTS='--no-sort --exact'
 
 ### --- nnn Config ------------------------------------
 source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
+export NNN_PLUG='Z:autojump'
 
 ### --- kitty Config ------------------------------------
 # $KITTY_TERM is a custom envar I set in the kitty conf
@@ -100,3 +101,6 @@ alias kimg="kitty +kitten icat"
 
 ### --- local Config ------------------------------------
 source ~/.local.zsh
+
+### --- zoxide Config ------------------------------------
+eval "$(zoxide init zsh)"

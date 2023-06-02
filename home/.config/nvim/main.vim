@@ -41,6 +41,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'nanotee/zoxide.vim'
 runtime markdownpreview.vim
 
 call plug#end()
@@ -198,8 +199,6 @@ dimensions  = {
     },
 })
 
--- Example keybindings
+-- floaterm keys
 vim.keymap.set('n', '<F12>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<F12>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-
-END
