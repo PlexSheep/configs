@@ -13,13 +13,8 @@ packadd termdebug
 " debugging for rust
 command Rustdebug :let termdebugger="rust-gdb" | :Termdebug
 
-" :W to write file as root"
-command W :SudaWrite
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
-
-" :E to open file as root"
-command E :SudaRead
 
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
@@ -42,6 +37,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nanotee/zoxide.vim'
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 runtime markdownpreview.vim
 
 call plug#end()
