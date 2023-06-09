@@ -130,6 +130,10 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 "CocInstall coc-lists coc-lua coc-pyright coc-rust-analyzer coc-sh coc-snippets coc-sql
 """"these may cause errors"""""CocInstall coc-symbol-line coc-toml coc-texlab coc-vimlsp coc-xml
 
+" slime (sends stuff to other programs, like ipython)
+let g:slime_target = "neovim"
+
+
 "------------------------------------------------------
 lua << END
 require('alpha').setup(require('alpha.themes.startify').config)
@@ -199,3 +203,9 @@ dimensions  = {
 -- floaterm keys
 vim.keymap.set('n', '<F12>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<F12>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+-- slime
+-- get id of a terminal, FloatTerm is usually 7, but I should rice this more
+vim.g.slime_get_jobid = function()
+    return 7
+end

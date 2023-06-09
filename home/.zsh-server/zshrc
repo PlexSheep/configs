@@ -17,6 +17,7 @@ alias egrep="grep -E"
 alias lgrep="find | grep"
 alias psgrep="ps axu | grep"
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
+alias gls=/bin/ls
 
 ### Functions
 function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }
