@@ -32,7 +32,7 @@ alias gls=/bin/ls
 ### Functions
 function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }
 function midfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(M|G|T|P|E)\s" }
-function midfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(B|K)\s" }
+function smallfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(B|K)\s" }
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
