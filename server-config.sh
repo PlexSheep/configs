@@ -21,22 +21,4 @@ ln ~/.zsh-server/zshrc ~/.zshrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo bash -c 'rm ~/.zsh-very-old'
-sudo bash -c 'mv ~/.zsh-old ~/.zsh-very-old'
-sudo bash -c 'mv ~/.zsh ~/.zsh-old'
 
-sudo bash -c 'rm ~/.zshrc-very-old'
-sudo bash -c 'mv ~/.zshrc-old ~/.zshrc-very-old'
-sudo bash -c 'mv ~/.zshrc ~/.zshrc-old'
-
-sudo bash -c 'cp -r $(pwd)/home/.zsh-server ~'
-sudo bash -c 'cp -r $(pwd)/home/.vimrc ~'
-sudo bash -c 'cp -r $(pwd)/home/.local ~'
-sudo bash -c 'cp -r $(pwd)/home/.config ~'
-sudo bash -c 'cp -r $(pwd)/home/.tmux-server.conf ~/.tmux.conf'
-
-sudo bash -c 'ln ~/.zsh-server/zshrc ~/.zshrc'
-
-# Install Vim Stuff
-sudo sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
