@@ -98,8 +98,3 @@ tnoremap <Esc> <C-\><C-n>
 command W :w ! sudo tee %
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
-" debuging
-packadd termdebug
-
-" debuggin for rust
-command Rustdebug :let termdebugger="rust-gdb" | :Termdebug
