@@ -17,6 +17,8 @@ alias egrep="grep -E"
 alias lgrep="find | grep"
 alias psgrep="ps axu | grep"
 alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
+alias gg=lazygit
+alias reload="source ~/.zshrc"
 alias gls=/bin/ls
 
 ### Functions
@@ -79,3 +81,12 @@ source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
 
 ### --- local Config ------------------------------------
 source ~/.local.zsh
+
+### --- zoxide Config ------------------------------------
+if ! command -v zoxide &> /dev/null
+then
+    # zoxide not installed, skipping
+    exit
+else
+    eval "$(zoxide init zsh)"
+fi

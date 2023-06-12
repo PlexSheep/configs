@@ -106,4 +106,10 @@ alias kimg="kitty +kitten icat"
 source ~/.local.zsh
 
 ### --- zoxide Config ------------------------------------
-eval "$(zoxide init zsh)"
+if ! command -v zoxide &> /dev/null
+then
+    # zoxide not installed, skipping
+    exit
+else
+    eval "$(zoxide init zsh)"
+fi
