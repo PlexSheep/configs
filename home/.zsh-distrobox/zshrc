@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ### ENVVARS
-export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:~/.cargo/bin
 export EDITOR=nvim
 export editor=nvim
 
@@ -35,7 +34,7 @@ function midfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(M|G|T|P|E)\
 function smallfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(B|K)\s" }
 
 ### ZSH HOME
-export ZSH=$HOME/.zsh
+export ZSH=$HOME/.zsh-distrobox
 
 ### ---- history config -------------------------------------
 export HISTFILE=~/.zsh_history
@@ -105,12 +104,3 @@ alias kimg="kitty +kitten icat"
 
 ### --- local Config ------------------------------------
 source ~/.local.zsh
-
-### --- zoxide Config ------------------------------------
-if ! command -v zoxide &> /dev/null
-then
-    # zoxide not installed, skipping
-    exit
-else
-    eval "$(zoxide init zsh)"
-fi
