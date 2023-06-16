@@ -20,7 +20,7 @@ set completeopt=menuone,noinsert,noselect
 set completeopt=menuone,noinsert,noselect
 call plug#begin()
 
-Plug 'lambdalisue/suda.vim'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
