@@ -16,9 +16,3 @@ cp -r $(pwd)/home/.tmux-server.conf ~/.tmux.conf
 touch ~/.local.zsh
 
 ln ~/.zsh-server/zshrc ~/.zshrc
-
-# Install Vim Stuff
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-
