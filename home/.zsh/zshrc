@@ -110,7 +110,7 @@ source ~/.local.zsh
 if ! command -v zoxide &> /dev/null
 then
     # zoxide not installed, skipping
-    exit
+    // do nothing
 else
     eval "$(zoxide init zsh)"
 fi
