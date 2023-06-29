@@ -18,13 +18,16 @@ set completeopt=menuone,noinsert,noselect
 
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
+
+" load nvim-tree stuff
+runtime nvim-tree.vim
+
 call plug#begin()
 
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-tree/nvim-tree.lua'
 Plug 'psliwka/vim-smoothie' " scorll with STRG + d or STRG + u
 Plug 'romgrk/barbar.nvim'          " tabs for buffers
 Plug 'EdenEast/nightfox.nvim'      " Vim-Plug
@@ -32,7 +35,6 @@ Plug 'numToStr/FTerm.nvim'         " floating terminal, toggle with <F11>
 Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-lualine/lualine.nvim'   " nicer status line
 Plug 'goolord/alpha-nvim'
-Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -42,6 +44,7 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 runtime markdownpreview.vim
 
 call plug#end()
+
 
 " no default mappings for vim smoothie (fancy scrolling)
 let g:smoothie_no_default_mappings = 1
@@ -58,10 +61,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
-
-
-" Open NvimTree with f5"
-nnoremap <F5> :NvimTreeToggle<CR>
 
 " Move to previous/next"
 nnoremap <silent>    <A-,> <Cmd>BufferPrevious<CR>
@@ -145,8 +144,6 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
 
 require('lualine').setup {
     options = {
