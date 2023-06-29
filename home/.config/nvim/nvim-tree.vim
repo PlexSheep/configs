@@ -21,7 +21,7 @@ local function my_on_attach(bufnr)
   end
 
   -- default mappings
-  --api.config.mappings.default_on_attach(bufnr)
+  api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
   -- cd 
