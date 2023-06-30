@@ -1,0 +1,108 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+### ENVVARS
+export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:~/.cargo/bin
+export EDITOR=nvim
+export editor=nvim
+
+### Aliases
+alias l="lsd -lah"
+alias ll="lsd -lh"
+alias la="lsd -a"
+alias ls="lsd"
+alias rm='echo "If you really want to use rm, use purge.\nOtherwise, please consider using trash instead: trash"'
+alias purge="/usr/bin/rm"
+alias doas='doas '
+alias sudo='nocorrect sudo '
+alias grep="grep --color"
+alias egrep="grep -E"
+alias lgrep="find | grep"
+alias psgrep="ps axu | grep"
+alias plasmarestart="killall plasmashell; kstart5 plasmashell"
+alias isotime='date +"%Y-%m-%dT%H:%M:%S%z"'
+alias gg=lazygit
+alias reload="source ~/.zshrc"
+alias gls=/bin/ls
+
+### Functions
+function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }
+function midfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(M|G|T|P|E)\s" }
+function smallfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(B|K)\s" }
+
+### ZSH HOME
+export ZSH=$HOME/.zsh
+
+### ---- history config -------------------------------------
+export HISTFILE=~/.zsh_history
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+# How many commands zsh will load to memory.
+export HISTSIZE=100000
+
+# How many commands history will save on file.
+# all of them!
+export SAVEHIST=10000000
+
+# History won't save duplicates.
+setopt HIST_IGNORE_ALL_DUPS
+
+# History won't show duplicates on search.
+setopt HIST_FIND_NO_DUPS
+
+### ---- zsh options -------------------------------------
+setopt autocd
+
+### --- Inputs Config ------------------------------------
+# vim keys, then override stuff.
+bindkey -v	
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey -s "^X" 'n^M'
+
+### ---- ZSH MODULES -----------------------------------
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+### ---- PLUGINS -----------------------------------
+source ~/.local/share/fzf/key-bindings.zsh
+source ~/.local/share/fzf/completion.zsh
+
+### --- fzf Config ------------------------------------
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS='--no-sort --exact'
+
+### --- nnn Config ------------------------------------
+source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
+export NNN_PLUG='j:jump;z:autojump;'
+
+### --- kitty Config ------------------------------------
+# $KITTY_TERM is a custom envar I set in the kitty conf
+# this stuff does not work nicely with tmux, just make them regular aliases. Shows an error if you use them in another terminal
+#if [[ "$KITTY_TERM" -eq "TRUE" ]]
+#then
+#    alias ssh="kitty +kitten ssh"
+#    alias tmux="export KITTY_TERM='TRUE'; tmux"
+#fi
+alias kssh="kitty +kitten ssh"
+alias kimg="kitty +kitten icat"
+# kdiff does not work on my system for some reason
+#alias kdiff="kitty +kitten diff"
+
+### --- local Config ------------------------------------
+source ~/.local.zsh
+
+### --- zoxide Config ------------------------------------
+if ! command -v zoxide &> /dev/null
+then
+    # zoxide not installed, skipping
+    # do nothing
+else
+    eval "$(zoxide init zsh)"
+fi

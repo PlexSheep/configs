@@ -34,7 +34,6 @@ Plug 'EdenEast/nightfox.nvim'      " Vim-Plug
 Plug 'numToStr/FTerm.nvim'         " floating terminal, toggle with <F11>
 Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-lualine/lualine.nvim'   " nicer status line
-Plug 'goolord/alpha-nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -134,8 +133,7 @@ let g:slime_target = "neovim"
 
 
 "------------------------------------------------------
-lua << END
-require('alpha').setup(require('alpha.themes.startify').config)
+lua << EOF
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -206,3 +204,4 @@ vim.keymap.set('t', '<F12>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>'
 vim.g.slime_get_jobid = function()
     return 7
 end
+EOF
