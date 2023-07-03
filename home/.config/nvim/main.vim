@@ -19,7 +19,8 @@ set completeopt=menuone,noinsert,noselect
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
 
-" load nvim-tree stuff
+
+" load plugins from extra files
 runtime nvim-tree.vim
 
 call plug#begin()
@@ -35,6 +36,7 @@ Plug 'numToStr/FTerm.nvim'         " floating terminal, toggle with <F11>
 Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-lualine/lualine.nvim'   " nicer status line
 Plug 'goolord/alpha-nvim'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -45,6 +47,8 @@ runtime markdownpreview.vim
 
 call plug#end()
 
+" load plugins from extra files
+runtime nvim-table-mode.vim
 
 " no default mappings for vim smoothie (fancy scrolling)
 let g:smoothie_no_default_mappings = 1
@@ -131,7 +135,6 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 " slime (sends stuff to other programs, like ipython)
 let g:slime_target = "neovim"
-
 
 "------------------------------------------------------
 lua << END
