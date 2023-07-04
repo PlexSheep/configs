@@ -95,3 +95,6 @@ nnoremap <C-Left> :vertical resize -1<CR>
 nnoremap <C-Right> :vertical resize +1<CR>
 nnoremap <C-Up> :resize -1<CR>
 nnoremap <C-Down> :resize +1<CR>
+
+" remove extra gutter width for line numbers
+set numberwidth=5

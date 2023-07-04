@@ -19,36 +19,23 @@ set completeopt=menuone,noinsert,noselect
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
 
+" load vim plugged stuff
+runtime plugs.vim
 
 " load plugins from extra files
 runtime nvim-tree.vim
 
-call plug#begin()
-
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'jiangmiao/auto-pairs'
-Plug 'mhinz/vim-startify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'psliwka/vim-smoothie' " scorll with STRG + d or STRG + u
-Plug 'romgrk/barbar.nvim'          " tabs for buffers
-Plug 'EdenEast/nightfox.nvim'      " Vim-Plug
-Plug 'numToStr/FTerm.nvim'         " floating terminal, toggle with <F11>
-Plug 'kdheepak/lazygit.nvim'
-Plug 'nvim-lualine/lualine.nvim'   " nicer status line
-Plug 'goolord/alpha-nvim'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-Plug 'nanotee/zoxide.vim'
-Plug 'jpalardy/vim-slime', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+" plugin specific configs
 runtime markdownpreview.vim
-
-call plug#end()
 
 " load plugins from extra files
 runtime nvim-table-mode.vim
+
+" load tabbar
+runtime tagbar.vim
+
+" load ALE (another language server or something that works with COC)
+runtime ale.vim
 
 " no default mappings for vim smoothie (fancy scrolling)
 let g:smoothie_no_default_mappings = 1
@@ -108,7 +95,7 @@ nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
 " :BarbarEnable - enables barbar (enabled by default)
 " :BarbarDisable - very bad command, should never be used
 "
-color terafox
+color nightfox
 
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
@@ -122,11 +109,8 @@ let g:lazygit_config_file_path = '' " custom config file path
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 
-
 " coc language server configs
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+runtime coc.vim
 
 " do these commands manually, they dont like being scripted.
 "CocInstall coc-clangd coc-cmake coc-css coc-floaterm coc-fzf-preview coc-git coc-html coc-json

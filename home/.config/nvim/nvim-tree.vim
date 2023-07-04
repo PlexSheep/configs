@@ -1,12 +1,5 @@
-call plug#begin()
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'
-call plug#end()
-
-
 " Open NvimTree with f5"
 nnoremap <F5> :NvimTreeToggle<CR>
-
 
 lua << EOF
 
