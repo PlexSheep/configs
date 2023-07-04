@@ -91,8 +91,8 @@ map <Leader>" :vsplit<CR>
 map <Leader>% :split<CR>
 
 " resize windows
-nnoremap <C-Left> :vertical resize -1<CR>
-nnoremap <C-Right> :vertical resize +1<CR>
+nnoremap <C-Left> :vertical resize +1<CR>
+nnoremap <C-Right> :vertical resize -1<CR>
 nnoremap <C-Up> :resize -1<CR>
 nnoremap <C-Down> :resize +1<CR>
 

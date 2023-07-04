@@ -35,7 +35,7 @@ runtime nvim-table-mode.vim
 runtime tagbar.vim
 
 " load ALE (another language server or something that works with COC)
-runtime ale.vim
+"runtime ale.vim
 
 " no default mappings for vim smoothie (fancy scrolling)
 let g:smoothie_no_default_mappings = 1
