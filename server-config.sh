@@ -1,12 +1,13 @@
 #!/bin/bash
+set -e
 
-rm -rf ~/.zsh-very-old
-mv ~/.zsh-old ~/.zsh-very-old
-mv ~/.zsh ~/.zsh-old
+[ -f ~/.zsh-very.old ] && rm -rf ~/.zsh-very-old
+[ -f ~/.zsh-old ] && mv ~/.zsh-old ~/.zsh-very-old
+[ -f ~/.zsh ] && mv ~/.zsh ~/.zsh-old
 
-rm -rf ~/.zshrc-very-old
-mv ~/.zshrc-old ~/.zshrc-very-old
-mv ~/.zshrc ~/.zshrc-old
+[ -f ~/.zshrc-very-old ] && rm -rf ~/.zshrc-very-old
+[ -f ~/.zshrc-old ] && mv ~/.zshrc-old ~/.zshrc-very-old
+[ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc-old
 
 cp -r $(pwd)/home/.zsh-server ~
 cp -r $(pwd)/home/.vimrc ~
