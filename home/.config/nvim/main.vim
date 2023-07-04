@@ -19,7 +19,7 @@ set completeopt=menuone,noinsert,noselect
 " Set completeopt to have a better completion experience"
 set completeopt=menuone,noinsert,noselect
 
-" load nvim-tree stuff
+" load extra stuff
 runtime nvim-tree.vim
 
 call plug#begin()
@@ -40,10 +40,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nanotee/zoxide.vim'
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+Plug 'dhruvasagar/vim-table-mode'
 runtime markdownpreview.vim
 
 call plug#end()
 
+" load extra stuff
+runtime table-mode.vim
 
 " no default mappings for vim smoothie (fancy scrolling)
 let g:smoothie_no_default_mappings = 1
