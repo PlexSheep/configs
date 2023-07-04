@@ -14,8 +14,7 @@ local function my_on_attach(bufnr)
   end
 
   -- default mappings
-  -- causes weird bugs, somehow it works without that?
-  --api.config.mappings.default_on_attach(bufnr)
+  api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
   -- cd 

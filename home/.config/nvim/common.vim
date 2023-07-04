@@ -19,7 +19,8 @@ set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set fdm=indent              " foldingmethod syntax
 set foldlevel=10            " only fold when a certain complexity is reached by default. This applies only at startup.
-"set spell                 " enable spell check (may need to download language package)
+set numberwidth=4
+set spell                 " enable spell check (may need to download language package)
 set timeout timeoutlen=400
 set ttimeoutlen=0
 
@@ -40,6 +41,8 @@ noremap OO O<ESC>
 " H and L for end and beginning
 nmap H ^
 nmap L $
+vmap H ^
+vmap L $
 
 " usefull functions for arrow keys
 " (and force the user to use hjkl)
@@ -95,6 +98,3 @@ nnoremap <C-Left> :vertical resize +1<CR>
 nnoremap <C-Right> :vertical resize -1<CR>
 nnoremap <C-Up> :resize -1<CR>
 nnoremap <C-Down> :resize +1<CR>
-
-" remove extra gutter width for line numbers
-set numberwidth=5

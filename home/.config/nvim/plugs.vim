@@ -22,6 +22,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/tagbar'
+Plug 'lambdalisue/suda.vim'
 "Plug 'dense-analysis/ale'
 
 call plug#end()
