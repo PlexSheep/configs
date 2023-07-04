@@ -10,6 +10,9 @@ export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/
 export EDITOR=nvim
 export editor=nvim
 
+# configure `time` format
+TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
+
 ### Aliases
 alias l="lsd -lah"
 alias ll="lsd -lh"
@@ -37,27 +40,34 @@ function smallfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(B|K)\s" }
 ### ZSH HOME
 export ZSH=$HOME/.zsh
 
-### ---- history config -------------------------------------
-export HISTFILE=~/.zsh_history
+### ---- zsh options -------------------------------------
+setopt autocd
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt appendhistory
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+setopt interactivecomments # allow comments in interactive mode
+setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
+setopt nonomatch           # hide error message if there is no match for the pattern
+setopt notify              # report the status of background jobs immediately
+setopt numericglobsort     # sort filenames numerically when it makes sense
+setopt promptsubst         # enable command substitution in prompt
+WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
+PROMPT_EOL_MARK=""
 
-# How many commands zsh will load to memory.
-export HISTSIZE=100000
+# History configurations
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=200000
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+#setopt share_history         # share command history data
 
-# How many commands history will save on file.
-# all of them!
-export SAVEHIST=10000000
-
-# History won't save duplicates.
-setopt HIST_IGNORE_ALL_DUPS
-
-# History won't show duplicates on search.
-setopt HIST_FIND_NO_DUPS
-
-### ---- zsh options -------------------------------------
-setopt autocd
+# force zsh to show the complete history
+alias history="history 0"
 
 ### --- Inputs Config ------------------------------------
 # vim keys, then override stuff.
@@ -67,8 +77,7 @@ bindkey "^[[1;5D" backward-word
 bindkey -s "^X" 'n^M'
 
 ### ---- ZSH MODULES -----------------------------------
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# handled by original kali
 
 ### ---- PLUGINS -----------------------------------
 source ~/.local/share/fzf/key-bindings.zsh
@@ -106,3 +115,4 @@ then
 else
     eval "$(zoxide init zsh)"
 fi
+
