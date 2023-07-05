@@ -64,8 +64,8 @@ vmap <Up> :m -2<CR>
 vmap <Down> :m +1<CR>
 
 " resize windows
-nnoremap <C-Left> :vertical resize +1<CR>
-nnoremap <C-Right> :vertical resize -1<CR>
+nnoremap <C-Left> :vertical resize -1<CR>
+nnoremap <C-Right> :vertical resize +1<CR>
 nnoremap <C-Up> :resize -1<CR>
 nnoremap <C-Down> :resize +1<CR>
 
