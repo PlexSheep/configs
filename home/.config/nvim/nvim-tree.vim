@@ -18,6 +18,9 @@ local function my_on_attach(bufnr)
     -- for some reason, this does not work well when loaded with a wsl linux.
     -- attempt to index field 'config' (a nil value)
     -- which does not make sense, as config is a defined field of the Api variable
+    -- however, through magic, the default keys are loaded anyways ONLY IN WSL
+    -- I have made a seperate branch (wsl) for any such things
+    -- just use a proper linux, if possible
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
