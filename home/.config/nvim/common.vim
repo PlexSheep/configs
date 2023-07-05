@@ -1,5 +1,5 @@
+" GENERAL CONFIGS ----------------------------------------------------------------------------------
 syntax on                   " syntax highlighting
-
 set nocompatible            " disable compatibility to old-time vi
 set mouse=v                 " middle-click paste with 
 set number
@@ -15,23 +15,27 @@ set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=100                  " set an 100 column border for good coding style
 set mouse=a                 " enable mouse click
-set cursorline              " highlight current cursorline
+set cursorline              " highlight current cursor line
 set ttyfast                 " Speed up scrolling in Vim
-set fdm=indent              " foldingmethod syntax
-set foldlevel=10            " only fold when a certain complexity is reached by default. This applies only at startup.
-set numberwidth=4
-set timeout timeoutlen=400
+set fdm=indent              " folding method syntax
+set foldlevel=10            " only fold when a certain complexity is reached by default.
+                            " This applies only at startup.
+set numberwidth=4           " How much space the line numbers should take
+set signcolumn=yes          " Show extra icons in the line numbers (like git marks, errors)
+set timeout timeoutlen=400  " How long to wait for non prefix free hotkey melodies
 set ttimeoutlen=0
 
-" Avoid showing message extra message when using completion"
+" Avoid showing message extra message when using completion 
 set shortmess+=c
 
-filetype plugin indent on   "allow auto-indenting depending on file type
+"allow auto-indenting depending on file type
+filetype plugin indent on   
 filetype plugin on
 
 
 let g:indentLine_char = '│'
 
+" HOTKEYS ------------------------------------------------------------------------------------------
 " add lines with double o
 noremap oo o<ESC>
 noremap OO O<ESC>
@@ -42,8 +46,8 @@ nmap L $
 vmap H ^
 vmap L $
 
-" usefull functions for arrow keys
-" (and force the user to use hjkl)
+" useful functions for arrow keys
+" (and force the user to use `hjkl`)
 
 " right/left to add/remove a tab in the beginning of the line.
 nmap <Left> <<
@@ -59,7 +63,13 @@ nmap <Down> :m +1<CR>
 vmap <Up> :m -2<CR>
 vmap <Down> :m +1<CR>
 
-" hit f3 to toggle search highlighting"
+" resize windows
+nnoremap <C-Left> :vertical resize +1<CR>
+nnoremap <C-Right> :vertical resize -1<CR>
+nnoremap <C-Up> :resize -1<CR>
+nnoremap <C-Down> :resize +1<CR>
+
+" hit F3 to toggle search highlighting"
 nnoremap <F3> :set hlsearch!<CR> 
 
 nnoremap <SPACE> <Nop>
@@ -79,7 +89,7 @@ nnoremap  <leader>Y  "+Y
 nnoremap  <leader>y  "+y
 nnoremap  <leader>yy  "+yy
 
-" dont write the pasted upon stuff in visual mode into the register
+" don't write the pasted upon stuff in visual mode into the register
 vnoremap p pgvy
 
 " open terminal with F12
@@ -91,13 +101,10 @@ map <Leader>" :vsplit<CR>
 " split with <Leader>, then %"
 map <Leader>% :split<CR>
 
-" resize windows
-nnoremap <C-Left> :vertical resize +1<CR>
-nnoremap <C-Right> :vertical resize -1<CR>
-nnoremap <C-Up> :resize -1<CR>
-nnoremap <C-Down> :resize +1<CR>
+" join with <leader>j
+nnoremap <leader>j :join<CR>
 
-" spell checking
+" spell checking -----------------------------------------------------------------------------------
 set spell spelllang=en
 
 " go to last or next misspelled word
@@ -114,11 +121,11 @@ nnoremap ZN [S
 nnoremap z<space> z=
 
 " don't make things written as `something` a typo
-syntax region cCommentNoSpell start=+`+ end=+`+
+syntax region cBackTickNoSpell start=+`+ end=+`+
     \ contained containedin=cComment,cCommentL transparent
     \ contains=@NoSpell
 
 " don't make lines starting with `//!` a typo (used by rust docs)
-syntax region cCommentNoSpell start=+//!+ end='\z1' contained extend
+syntax region cRusDocCommentNoSpell start=+//!+ end='\z1' contained extend
     \ contained containedin=cComment,cCommentL transparent
     \ contains=@NoSpell
