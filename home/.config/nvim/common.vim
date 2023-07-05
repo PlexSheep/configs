@@ -111,4 +111,4 @@ nnoremap ZN [S
 " mark correct with zg, mark bad with zw, undo with zug/zuw
 
 " correct with zc, default is z= but that sucks for qwertz keyboards
-nnoremap zc z=
+nnoremap z<space> z=
