@@ -7,9 +7,9 @@ set nocompatible
 set hlsearch                " highlight search 
 set incsearch               " incremental search
 set tabstop=4               " number of columns occupied by a tab 
-set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
+set softtabstop=4           " see multiple spaces as tab stops so <BS> does the right thing
 set expandtab               " converts tabs to white space
-set shiftwidth=4            " width for autoindents
+set shiftwidth=4            " width for auto indents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
@@ -20,7 +20,6 @@ set ttyfast                 " Speed up scrolling in Vim
 set fdm=indent              " foldingmethod syntax
 set foldlevel=10            " only fold when a certain complexity is reached by default. This applies only at startup.
 set numberwidth=4
-set spell                 " enable spell check (may need to download language package)
 set timeout timeoutlen=400
 set ttimeoutlen=0
 
@@ -31,7 +30,6 @@ filetype plugin indent on   "allow auto-indenting depending on file type
 filetype plugin on
 
 
-" let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
 
 " add lines with double o
@@ -69,7 +67,7 @@ let mapleader=" "
 map <leader>t :echo "leader tested!"<CR>
 map <leader>h :noh<CR>
 
-" copy to wayland clipboard when leader is used. (note, install gvim for this)
+" copy to Wayland clipboard when leader is used. (note, install gvim for this)
 vnoremap  <leader>wy  y :call system("wl-copy", @")<CR>
 nnoremap  <leader>wY  Y :call system("wl-copy", @")<CR>
 nnoremap  <leader>wy  y :call system("wl-copy", @")<CR>
@@ -98,3 +96,19 @@ nnoremap <C-Left> :vertical resize +1<CR>
 nnoremap <C-Right> :vertical resize -1<CR>
 nnoremap <C-Up> :resize -1<CR>
 nnoremap <C-Down> :resize +1<CR>
+
+" spell checking
+set spell spelllang=en
+
+" go to last or next misspelled word
+nnoremap zn ]s
+nnoremap zN [s
+
+" same as above but only with bad words (unrecognized)
+nnoremap Zn ]S
+nnoremap ZN [S
+
+" mark correct with zg, mark bad with zw, undo with zug/zuw
+
+" correct with zc, default is z= but that sucks for qwertz keyboards
+nnoremap zc z=
