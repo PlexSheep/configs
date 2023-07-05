@@ -18,7 +18,7 @@ local function my_on_attach(bufnr)
     -- for some reason, this does not work well when loaded with a wsl linux.
     -- attempt to index field 'config' (a nil value)
     -- which does not make sense, as config is a defined field of the Api variable
-    api.config.mappings.default_on_attach(bufnr)
+    --api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
     -- cd 
