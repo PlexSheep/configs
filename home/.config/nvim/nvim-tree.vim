@@ -1,4 +1,4 @@
-" Open NvimTree with f5"
+" Open NvimTree with F5"
 nnoremap <F5> :NvimTreeToggle<CR>
 
 lua << EOF
@@ -15,12 +15,12 @@ local function my_on_attach(bufnr)
   end
 
     -- default mappings
-    -- for some reason, this does not work well when loaded with a wsl linux.
+    -- for some reason, this does not work well when loaded with a WSL Linux.
     -- attempt to index field 'config' (a nil value)
     -- which does not make sense, as config is a defined field of the Api variable
     -- however, through magic, the default keys are loaded anyways ONLY IN WSL
-    -- I have made a seperate branch (wsl) for any such things
-    -- just use a proper linux, if possible
+    -- I have made a separate branch (wsl) for any such things
+    -- just use a proper Linux, if possible
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
