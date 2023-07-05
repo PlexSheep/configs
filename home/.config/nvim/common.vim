@@ -112,3 +112,13 @@ nnoremap ZN [S
 
 " correct with zc, default is z= but that sucks for qwertz keyboards
 nnoremap z<space> z=
+
+" don't make things written as `something` a typo
+syntax region cCommentNoSpell start=+`+ end=+`+
+    \ contained containedin=cComment,cCommentL transparent
+    \ contains=@NoSpell
+
+" don't make lines starting with `//!` a typo (used by rust docs)
+syntax region cCommentNoSpell start=+//!+ end='\z1' contained extend
+    \ contained containedin=cComment,cCommentL transparent
+    \ contains=@NoSpell
