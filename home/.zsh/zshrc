@@ -81,6 +81,7 @@ bindkey -s "^X" 'n^M'
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 ### ---- ZSH MODULES -----------------------------------
+fpath=($ZSH/zfunc $fpath)
 # enable completion features
 autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
