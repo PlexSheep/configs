@@ -104,6 +104,10 @@ map <Leader>% :split<CR>
 " join with <leader>j
 nnoremap <leader>j :join<CR>
 
+" move screen a line up/down with alt U/D
+nmap <A-u> kzz
+nmap <A-d> jzz
+
 " spell checking -----------------------------------------------------------------------------------
 set spell spelllang=en
 
