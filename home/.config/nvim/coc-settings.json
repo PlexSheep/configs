@@ -1,5 +1,5 @@
 {
     "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
     "suggest.acceptSuggestionOnCommitCharacter": true,
-    "diagnostic.displayByAle": true
+    "diagnostic.displayByAle": false
 }
