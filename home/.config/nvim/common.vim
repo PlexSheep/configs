@@ -107,6 +107,9 @@ nnoremap <leader>j :join<CR>
 " spell checking -----------------------------------------------------------------------------------
 set spell spelllang=en
 
+" set a location
+set spellfile=~/.config/nvim/spell/en.utf-8.add
+
 " go to last or next misspelled word
 nnoremap zn ]s
 nnoremap zN [s
