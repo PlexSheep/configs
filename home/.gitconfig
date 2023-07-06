@@ -1,7 +1,7 @@
 [user]
-	email = Christoph.Scherr@newtec.de
-	name = Christoph J. Scherr
-	signingkey = Christoph.Scherr@newtec.de
+	email = software@cscherr.de
+	name = PlexSheep
+	signingkey = software@cscherr.de
 [credential]
 	helper = store --file ~/.git-credentials
 [commit]
