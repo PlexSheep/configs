@@ -104,8 +104,15 @@ map <Leader>% :split<CR>
 " join with <leader>j
 nnoremap <leader>j :join<CR>
 
+" move screen a line up/down with alt U/D
+nmap <A-u> kzz
+nmap <A-d> jzz
+
 " spell checking -----------------------------------------------------------------------------------
 set spell spelllang=en
+
+" set a location
+set spellfile=~/.config/nvim/spell/en.utf-8.add
 
 " go to last or next misspelled word
 nnoremap zn ]s
@@ -117,8 +124,15 @@ nnoremap ZN [S
 
 " mark correct with zg, mark bad with zw, undo with zug/zuw
 
-" correct with zc, default is z= but that sucks for qwertz keyboards
-nnoremap z<space> z=
+" fancy fzf correct with zc, default is z= but that sucks for qwertz keyboards
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
+nnoremap z<space> :call FzfSpell()<CR>
 
 " don't make things written as `something` a typo
 syntax region cBackTickNoSpell start=+`+ end=+`+
