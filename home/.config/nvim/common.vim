@@ -117,8 +117,15 @@ nnoremap ZN [S
 
 " mark correct with zg, mark bad with zw, undo with zug/zuw
 
-" correct with zc, default is z= but that sucks for qwertz keyboards
-nnoremap z<space> z=
+" fancy fzf correct with zc, default is z= but that sucks for qwertz keyboards
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
+nnoremap z<space> :call FzfSpell()<CR>
 
 " don't make things written as `something` a typo
 syntax region cBackTickNoSpell start=+`+ end=+`+
