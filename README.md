@@ -14,13 +14,9 @@ target user, some stuff will need to run as root.
 - lsd (workstations)
 - nodejs (nvim language server)
 
-# TODO
-[ ] list nvim plugins and auto install
-[ ] add options for help, only local installs, complete installs and so on
-[ ] add vim shortcut to resize splits
-[ ] take a look at autoclosing plugins for nvim
-[ ] Check if :Rustdebug works with regular vim
-
 # Mirrored
 The origin of this repository is [git.cscherr.de](https://git.cscherr.de/PlexSheep/configs.git)
-It is mirrored to [github](https://github.com/PlexSheep/configs)
+
+It is mirrored to:
+- [github](https://github.com/PlexSheep/configs)
+- [codeberg](https://codeberg.org/PlexSheep/configs)

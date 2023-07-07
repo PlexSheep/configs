@@ -103,6 +103,13 @@ map <Leader>% :split<CR>
 
 " join with <leader>j
 nnoremap <leader>j :join<CR>
+" join up with <leader>J
+nnoremap <leader>J :move .-2<CR> :join<CR>
+
+" split lines with <leader>s
+nnoremap <leader>s i<CR><ESC>
+" split lines up with <leader>S
+nnoremap <leader>S i<CR><ESC> V:m -2<CR>
 
 " move screen a line up/down with alt U/D
 nmap <A-u> kzz
