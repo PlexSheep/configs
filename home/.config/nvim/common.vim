@@ -14,7 +14,7 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=100                  " set an 100 column border for good coding style
-set mouse=a                 " enable mouse click
+set mouse=hr                " enable mouse for help file editing and hitting prompts
 set cursorline              " highlight current cursor line
 set ttyfast                 " Speed up scrolling in Vim
 set fdm=indent              " folding method syntax
