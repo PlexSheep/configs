@@ -122,6 +122,8 @@ runtime coc.vim
 
 " slime (sends stuff to other programs, like ipython)
 let g:slime_target = "neovim"
+nmap <C-c>a ggvG:SlimeSend<CR>
+nmap <leader>cs :SlimeConfig<CR>
 
 "------------------------------------------------------
 lua << EOF
