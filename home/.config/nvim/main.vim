@@ -122,6 +122,8 @@ runtime coc.vim
 
 " slime (sends stuff to other programs, like ipython)
 let g:slime_target = "neovim"
+nmap <C-c>a ggvG:SlimeSend<CR>
+nmap <leader>cs :SlimeConfig<CR>
 
 "------------------------------------------------------
 lua << EOF
@@ -190,9 +192,4 @@ dimensions  = {
 vim.keymap.set('n', '<F12>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<F12>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
--- slime
--- get id of a terminal, FloatTerm is usually 7, but I should rice this more
-vim.g.slime_get_jobid = function()
-    return 7
-end
 EOF
