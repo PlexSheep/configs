@@ -21,7 +21,7 @@ local function my_on_attach(bufnr)
     -- however, through magic, the default keys are loaded anyways ONLY IN WSL
     -- I have made a separate branch (wsl) for any such things
     -- just use a proper Linux, if possible
-    api.config.mappings.default_on_attach(bufnr)
+    --api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
     -- cd 
