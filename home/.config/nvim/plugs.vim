@@ -26,7 +26,3 @@ Plug 'lambdalisue/suda.vim'
 "Plug 'dense-analysis/ale'
 
 call plug#end()
-
-lua << EOF
-require("nvim-autopairs").setup {}
-EOF
