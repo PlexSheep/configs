@@ -1,7 +1,7 @@
 call plug#begin()
 
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie' " scorll with STRG + d or STRG + u
@@ -26,3 +26,7 @@ Plug 'lambdalisue/suda.vim'
 "Plug 'dense-analysis/ale'
 
 call plug#end()
+
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
