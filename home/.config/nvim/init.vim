@@ -19,7 +19,9 @@ if vim.g.started_by_firenvim == true then
     vim.cmd('runtime common.vim')
 else
     vim.cmd('runtime common.vim')
+    vim.cmd('runtime plugs.vim')
     vim.cmd('runtime main.vim')
+    vim.cmd('runtime autopairs.vim')
 end
 
 if os.name() == "Windows" then
