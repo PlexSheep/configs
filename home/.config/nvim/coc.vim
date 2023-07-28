@@ -1,4 +1,21 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-css', 'coc-floaterm', 'coc-fzf-preview', 'coc-html', 'coc-json', 'coc-lists', 'coc-lua', 'coc-pyright', 'coc-rust-analyzer', 'coc-sh', 'coc-sql', 'coc-markdownlint']
+let g:coc_global_extensions = [
+            \'coc-json', 
+            \'coc-git', 
+            \'coc-clangd', 
+            \'coc-cmake',
+            \'coc-css',
+            \'coc-floaterm',
+            \'coc-fzf-preview',
+            \'coc-html',
+            \'coc-json',
+            \'coc-lists',
+            \'coc-lua',
+            \'coc-pyright',
+            \'coc-rust-analyzer',
+            \'coc-sh',
+            \'coc-sql',
+            \'coc-markdownlint',
+            \]
 
 " navigate between errors quickly
 nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
