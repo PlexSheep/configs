@@ -8,6 +8,8 @@ augroup terminal
 augroup END
 
 " debuging
+"let g:termdebug_config['map_K'] = 0
+let g:termdebug_map_K = 0
 packadd termdebug
 
 " debugging for rust
