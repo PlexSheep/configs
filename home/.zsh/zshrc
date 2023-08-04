@@ -36,6 +36,10 @@ alias gls=/bin/ls
 function largefiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(G|T|P|E)\s" }
 function midfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(M|G|T|P|E)\s" }
 function smallfiles () { exec 2>/dev/null; du -ah "$@" | grep -P "^\d+(B|K)\s" }
+function cachekeys () { exec 2>/dev/null; 
+    eval $(ssh-agent)
+    ssh-add ~/.ssh/id_rsa
+}
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
@@ -141,10 +145,6 @@ export FZF_CTRL_R_OPTS='--no-sort --exact'
 ### --- nnn Config ------------------------------------
 source ~/.local/share/nnn/quitcd/quitcd.bash_zsh
 export NNN_PLUG='j:jump;z:autojump;'
-
-### --- ssh-agent setup ------------------------------------
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_rsa
 
 ### --- kitty Config ------------------------------------
 # $KITTY_TERM is a custom envar I set in the kitty conf
