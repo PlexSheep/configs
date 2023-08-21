@@ -115,7 +115,7 @@ nmap <A-u> kzz
 nmap <A-d> jzz
 
 " spell checking -----------------------------------------------------------------------------------
-set spell spelllang=en
+set spell spelllang=en,de
 
 " set a location
 set spellfile=~/.config/nvim/spell/en.utf-8.add
