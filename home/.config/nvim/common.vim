@@ -149,3 +149,8 @@ syntax region cBackTickNoSpell start=+`+ end=+`+
 syntax region cRusDocCommentNoSpell start=+//!+ end='\z1' contained extend
     \ contained containedin=cComment,cCommentL transparent
     \ contains=@NoSpell
+
+" stuff for marks
+" jump to the given mark with <#> instead of `, i have a qwertz keyboard
+nmap # `
+vmap # `
