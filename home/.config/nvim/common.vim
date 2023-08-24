@@ -94,6 +94,9 @@ vnoremap p pgvy
 " open terminal with F12
 nnoremap <F12> :terminal<CR>
 
+" no line numbers for terminals
+autocmd TermOpen * setlocal nonumber norelativenumber
+
 " vsplit with <Leader>, then "
 map <Leader>" :vsplit<CR>
 
@@ -113,6 +116,11 @@ nnoremap <leader>S i<CR><ESC> V:m -2<CR>
 " move screen a line up/down with alt U/D
 nmap <A-u> kzz
 nmap <A-d> jzz
+
+" stuff for marks
+" jump to the given mark with <#> instead of `, i have a qwertz keyboard
+nmap # `
+vmap # `
 
 " spell checking -----------------------------------------------------------------------------------
 set spell spelllang=en,de
@@ -149,8 +157,3 @@ syntax region cBackTickNoSpell start=+`+ end=+`+
 syntax region cRusDocCommentNoSpell start=+//!+ end='\z1' contained extend
     \ contained containedin=cComment,cCommentL transparent
     \ contains=@NoSpell
-
-" stuff for marks
-" jump to the given mark with <#> instead of `, i have a qwertz keyboard
-nmap # `
-vmap # `
