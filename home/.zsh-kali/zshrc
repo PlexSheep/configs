@@ -9,6 +9,7 @@ fi
 export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:~/.cargo/bin
 export EDITOR=nvim
 export editor=nvim
+export XDG_CONFIG_HOME=~/.config
 
 # configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'

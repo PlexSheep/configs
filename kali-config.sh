@@ -12,6 +12,8 @@ cp -r $(pwd)/home/.config ~
 cp -r $(pwd)/home/.tmux-server.conf ~/.tmux.conf
 touch ~/.local.zsh
 
-if [ tail -n 1 ~/.zshrc != "source ~/.zsh-kali/zshrc" ]; then
+last_line=$(tail -n 1 ~/.zshrc)
+
+if [ $last_line != "source ~/.zsh-kali/zshrc" ]; then
     echo "source ~/.zsh-kali/zshrc" >> ~/.zshrc
 fi

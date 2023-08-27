@@ -8,6 +8,7 @@ fi
 ### ENVVARS
 export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:~/.cargo/bin
 export EDITOR=nvim
+export XDG_CONFIG_HOME=~/.config
 export editor=nvim
 
 # configure `time` format
