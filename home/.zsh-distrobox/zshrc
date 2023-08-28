@@ -8,6 +8,7 @@ fi
 ### ENVVARS
 export EDITOR=nvim
 export editor=nvim
+export XDG_CONFIG_HOME=~/.config
 
 # configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
