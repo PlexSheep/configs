@@ -2,6 +2,7 @@
 export PATH=/usr/local/sbin:/usr/sbin/:/usr/local/bin:/usr/bin:~/.local/bin:~/.cargo/bin
 export EDITOR=vim
 export editor=vim
+export XDG_CONFIG_HOME=~/.config
 
 # configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
