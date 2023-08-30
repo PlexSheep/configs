@@ -5,4 +5,4 @@
 [credential]
 	helper = store --file ~/.git-credentials
 [commit]
-	gpgsign = true
+	gpgsign = false
