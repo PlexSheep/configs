@@ -14,7 +14,7 @@ let g:coc_global_extensions = [
             \'coc-rust-analyzer',
             \'coc-sh',
             \'coc-sql',
-            \'coc-markdownlint',
+            \'coc-yaml',
             \]
 
 " navigate between errors quickly
