@@ -41,6 +41,9 @@ function cachekeys () { exec 2>/dev/null;
     eval $(ssh-agent)
     ssh-add ~/.ssh/id_rsa
 }
+function newpass() {
+    LC_ALL=C tr -dc '[:alnum:]' < /dev/urandom | head -c${1:-$0}
+}
 
 ### ZSH HOME
 export ZSH=$HOME/.zsh
