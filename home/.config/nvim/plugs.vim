@@ -23,6 +23,8 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/tagbar'
 Plug 'lambdalisue/suda.vim'
-"Plug 'dense-analysis/ale'
+Plug 'nvim-neorg/neorg', {'do': ':Neorg sync-parsers'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()

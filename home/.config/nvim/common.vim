@@ -75,6 +75,7 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 map <leader>t :echo "leader tested!"<CR>
 map <leader>h :noh<CR>
+let maplocalleader=","
 
 " copy to Wayland clipboard when leader is used. (note, install gvim for this)
 vnoremap  <leader>wy  y :call system("wl-copy", @")<CR>

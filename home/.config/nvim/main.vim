@@ -37,6 +37,9 @@ runtime tagbar.vim
 " load suda
 runtime suda.vim
 
+" load neorg
+runtime neorg.vim
+
 " load ALE (another language server or something that works with COC)
 "runtime ale.vim
 
